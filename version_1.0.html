@@ -45,31 +45,39 @@
 <h1>Version 1.0<a class="headerlink" href="#version-1-0" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="premier-commit">
 <h2>Premier commit<a class="headerlink" href="#premier-commit" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Première fonctionnalité : lecture de deux nombres, affichage de leur somme.</p>
-<p>Tests : deux entiers positifs, un entier positif et un négatif, deux réels</p>
-<p>Ajout du fichier, git add, git status, git commit</p>
+<p>En appliquant ce qui a été présenté concernant l&#8217;écriture du code et le <em>test-driven development</em>, ajoutez une première fonctionnalité : la lecture de deux nombres et l&#8217;affichage de leur somme. Pour cette fonctionnalité, trois tests doivent être validés :</p>
+<ul class="simple">
+<li>l&#8217;addition de deux entiers positifs différents</li>
+<li>l&#8217;addition d&#8217;un entier positif et d&#8217;un entier négatif (de préférence différent de l&#8217;opposé du premier)</li>
+<li>l&#8217;addition de deux réels</li>
+</ul>
+<p>La commande <a class="reference external" href="https://git-scm.com/docs/git-status">git status</a> permet de vérifier l&#8217;état des fichiers dans le dépôt (inconnu, propre, modifié, supprimé, etc.). Vérifiez le statut courant de votre dépôt ; si des fichiers surnuméraires apparaissent, pensez à ajuster votre <code class="docutils literal"><span class="pre">.gitignore</span></code>.</p>
+<p>En vérifiant le statut du dépôt entre chaque étape,</p>
+<ol class="arabic simple">
+<li>Ajoutez le fichier au dépôt (<a class="reference external" href="https://git-scm.com/docs/git-add">git add</a>)</li>
+<li>Sauvegardez vos modifications (<a class="reference external" href="https://git-scm.com/docs/git-commit">git commit</a>) avec un message concis et informatif</li>
+</ol>
+<p>Vérifiez que votre commit a bien été pris en compte (<a class="reference external" href="https://git-scm.com/docs/git-log">git log</a>).</p>
 </div>
 <div class="section" id="ajout-de-fonctionnalites">
 <h2>Ajout de fonctionnalités<a class="headerlink" href="#ajout-de-fonctionnalites" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Soustraction, multiplication : lecture de l&#8217;opération (+, -, *), des opérandes,
-affichage du résultat.</p>
-<p>Tests : id. ci-dessus pour chacune des opérations, opération inconnue</p>
-<p>Y a-t-il du code dupliqué ? Si oui, le supprimer (refactoring).</p>
-<p>Commit</p>
+<p>Ajoutez deux nouvelles fonctionnalités : la soustraction et la multiplication. L&#8217;application doit désormais commencer par lire l&#8217;opérateur (<code class="docutils literal"><span class="pre">+</span></code>, <code class="docutils literal"><span class="pre">-</span></code> ou <code class="docutils literal"><span class="pre">*</span></code>), puis les deux opérandes ; si l&#8217;opérateur est inconnue, une erreur doit être remontée à l&#8217;utilisateur. Étendez les tests de l&#8217;étape précédente pour ces nouvelles opérations, et ajoutez un test vérifiant qu&#8217;une erreur se produit bien dans le cas d&#8217;un opérateur non reconnu.</p>
+<p>Votre application contient-elle actuellement du code dupliqué ? Si oui, supprimez-le. Vérifiez que les différentes sont documentées (a minima, une brève description de leur utilité), puis faitez un nouveau commit. En cas d&#8217;erreur dans un commit (fichier oublié, erreur dans le message, etc.), il est possible de modifier le dernier commit (<code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code>).</p>
 </div>
 <div class="section" id="controle-d-erreur">
 <h2>Contrôle d&#8217;erreur<a class="headerlink" href="#controle-d-erreur" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Division : id. ci-dessus</p>
-<p>Tests : opération inconnue, division par 0</p>
-<p>Commit : un par fonctionnalité ou un par section du TP (avantages et
-inconvénients)</p>
+<p>Ajoutez la division de deux nombres à votre application, en vérifiant qu&#8217;il n&#8217;y a pas de régression introduite par cet ajout, et en ajoutant deux nouveaux tests :</p>
+<ul class="simple">
+<li>la division de deux réels</li>
+<li>la division d&#8217;un réel par 0</li>
+</ul>
+<p>Faites un nouveau commit. Dans cet exercice, un commit a été réalisé pour chaque fonctionnalité : quels sont les avantages et les inconvénients de cette approche par rapport à l&#8217;utilisation d&#8217;un unique commit pour cette section ?</p>
 </div>
 <div class="section" id="etiquetage-de-version">
 <h2>Étiquetage de version<a class="headerlink" href="#etiquetage-de-version" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Constantes : en plus lieu d&#8217;un nombre, l&#8217;utilisateur peut saisir la valeur
-d&#8217;une constante (π, approximé à 3.14 (valeur <em>très</em> approximative, mais
-importante pour la suite))</p>
-<p>Tag : sémantique, ajout, suppression/déplacement et relation avec l&#8217;historique</p>
+<p>Dernier ajout avant l&#8217;étiquetage d&#8217;une version : la saisie d&#8217;une constante. Au lieu de saisr un nombre, l&#8217;utilisateur peut également saisir la valeur <code class="docutils literal"><span class="pre">pi</span></code> qui sera pour l&#8217;instant approximée à 3.14 (cette valeur est <em>très</em> approximative, mais ce choix est utilisé dans la suite du TP). Comme pour les fonctionnalités précédentes, vérifiez l&#8217;absence de régression, mettez à jour les tests, et faites un commit.</p>
+<p>La première version de votre application est désormais prête : ajoutez une étiquette (de valeur <code class="docutils literal"><span class="pre">v1.0</span></code>) au dernier commit (<a class="reference external" href="https://git-scm.com/docs/git-tag">git tag</a>). Lors du travail avec un dépôt distant (ce qui n&#8217;est pas le cas dans ce TP), il ne faut pas oublier que les étiquettes ne sont pas transmises par défaut : il faut ajouter l&#8217;option <code class="docutils literal"><span class="pre">--tags</span></code> à la commande <a class="reference external" href="https://git-scm.com/docs/git-push">git push</a>. La documentation mentionne que les étiquettes peuvent être déplacées ou supprimées, mais dans la pratique il faut éviter de modifier une étiquette qui a été transmise à un autre dépôt ou un autre développpeur : pourquoi ?</p>
+<p>Les étiquettes peuvent avoir un contenu sémantique : une des conventions possibles est la <a class="reference external" href="http://semver.org/lang/fr/">Gestion sémantique de version</a>, mais l&#8217;utilisation de cette convention ou d&#8217;une autre reste, comme d&#8217;habitude, une décision à prendre pour chaque projet.</p>
 </div>
 </div>
 
