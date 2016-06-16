@@ -13,18 +13,20 @@ Une fois Git installé, il est recommandé de configurer son identité (nom et a
   git config --global user.name "Georges Brouchard"
   git config --global user.email "brouchard@unistra.fr"
 
-À l'aide de la commande ``git config``, vérifiez que cette configuration a été correctement prise en compte. Une `référence`_ de toutes les commandes de Git est disponible sur leur site web ; une aide peut également être obtenue en ligne de commande avec les options ``-h`` ou ``--help``.
+À l'aide de la commande `git config`_, vérifiez que cette configuration a été correctement prise en compte. Une `référence`_ de toutes les commandes de Git est disponible sur leur site web ; une aide peut également être obtenue en ligne de commande avec les options ``-h`` ou ``--help``.
 
 Création d'un dépôt
 -------------------
 
-Créez un dépôt qui contiendra les sources de votre projet (``git init``). Il est possible, par dépôt, de modifier la configuration globale de Git, en omettant l'option ``--global`` utilisée ci-dessus. Essayez de modifier le nom ou l'email *uniquement pour ce dépôt*. Vérifiez que le découplage entre la configuration globale et la configuration locale fonctionne.
+Créez un dépôt qui contiendra les sources de votre projet (`git init`_). Il est possible, par dépôt, de modifier la configuration globale de Git, en omettant l'option ``--global`` utilisée ci-dessus. Essayez de modifier le nom ou l'email *uniquement pour ce dépôt*. Vérifiez que le découplage entre la configuration globale et la configuration locale fonctionne.
 
 En fonction des langages et des éventuelles méthodes de compilation, il peut être intéressant d'exclure automatiquement certains fichiers du dépôt (e.g. ``.o`` en C et C++, ``.class`` en Java, ``.pyc`` en Python). Dans votre dépôt, créez un fichier nommé `.gitignore`_ qui contient les motifs des fichiers que vous voulez exclure.
 
 
 .. _.gitignore: https://git-scm.com/docs/gitignore
 .. _Git: https://git-scm.com/
+.. _git config: https://git-scm.com/docs/git-config
+.. _git init: https://git-scm.com/docs/git-init
 .. _Homebrew: http://brew.sh/
 .. _Mac: https://git-scm.com/download/mac
 .. _MacPorts: https://www.macports.org/
