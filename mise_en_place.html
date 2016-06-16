@@ -47,17 +47,27 @@
 <div class="section" id="installation-et-configuration-de-git">
 <h2>Installation et configuration de Git<a class="headerlink" href="#installation-et-configuration-de-git" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Des binaires précompilés sont disponibles pour <a class="reference external" href="https://git-scm.com/download/mac">Mac</a> et <a class="reference external" href="https://git-scm.com/download/win">Windows</a>. Sous OS X, il est également possible de passer par un gestionnaire de paquet si vous en avez déjà un d&#8217;installé (<a class="reference external" href="http://brew.sh/">Homebrew</a>, <a class="reference external" href="https://www.macports.org/">MacPorts</a>). Sous Linux, il est recommandé d&#8217;utiliser les paquets de la distribution ; un <a class="reference external" href="https://git-scm.com/download/linux">récapitulatif</a> des différentes commandes selon les distributions est donné sur le site de Git.</p>
-<p>Une fois Git installé, il est recommandé de configurer son identité (nom et adresse e-mail) qui seront associés à chaque commit :</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;Georges Brouchard&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;brouchard@unistra.fr&quot;</span>
+<p>Une fois Git installé, il est recommandé de configurer son identité (nom et adresse e-mail) qui sera associée à chaque commit :</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Georges Brouchard&quot;</span>
+git config --global user.email <span class="s2">&quot;brouchard@unistra.fr&quot;</span>
 </pre></div>
 </div>
 <p>À l&#8217;aide de la commande <a class="reference external" href="https://git-scm.com/docs/git-config">git config</a>, vérifiez que cette configuration a été correctement prise en compte. Une <a class="reference external" href="https://git-scm.com/docs">référence</a> de toutes les commandes de Git est disponible sur leur site web ; une aide peut également être obtenue en ligne de commande avec les options <code class="docutils literal"><span class="pre">-h</span></code> ou <code class="docutils literal"><span class="pre">--help</span></code>.</p>
 </div>
 <div class="section" id="creation-d-un-depot">
 <h2>Création d&#8217;un dépôt<a class="headerlink" href="#creation-d-un-depot" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Créez un dépôt qui contiendra les sources de votre projet (<a class="reference external" href="https://git-scm.com/docs/git-init">git init</a>). Il est possible, par dépôt, de modifier la configuration globale de Git, en omettant l&#8217;option <code class="docutils literal"><span class="pre">--global</span></code> utilisée ci-dessus. Essayez de modifier le nom ou l&#8217;email <em>uniquement pour ce dépôt</em>. Vérifiez que le découplage entre la configuration globale et la configuration locale fonctionne.</p>
+<p>Créez un dépôt qui contiendra les sources de votre projet (<a class="reference external" href="https://git-scm.com/docs/git-init">git init</a>). Il est possible, par dépôt, de modifier la configuration de Git, en omettant l&#8217;option <code class="docutils literal"><span class="pre">--global</span></code> utilisée ci-dessus. Essayez de modifier le nom ou l&#8217;email <em>uniquement pour ce dépôt</em>. Vérifiez que le découplage entre la configuration globale et la configuration locale fonctionne.</p>
 <p>En fonction des langages et des éventuelles méthodes de compilation, il peut être intéressant d&#8217;exclure automatiquement certains fichiers du dépôt (e.g. <code class="docutils literal"><span class="pre">.o</span></code> en C et C++, <code class="docutils literal"><span class="pre">.class</span></code> en Java, <code class="docutils literal"><span class="pre">.pyc</span></code> en Python). Dans votre dépôt, créez un fichier nommé <a class="reference external" href="https://git-scm.com/docs/gitignore">.gitignore</a> qui contient les motifs des fichiers que vous voulez exclure.</p>
+</div>
+<div class="section" id="infrastructure-de-tests">
+<h2>Infrastructure de tests<a class="headerlink" href="#infrastructure-de-tests" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L&#8217;infrastructure de tests étant très dépendante du langage, seuls quelques outils seront mentionnés. N&#8217;hésitez pas à nous aider à compléter cette liste.</p>
+<ul class="simple">
+<li>C++ : <a class="reference external" href="http://www.boost.org/doc/libs/1_61_0/libs/test/doc/html/index.html">Boost.Test</a>, <a class="reference external" href="http://www.alittlemadness.com/2009/03/31/c-unit-testing-with-boosttest/">tutoriel</a></li>
+<li>Java : <a class="reference external" href="http://junit.org/junit4/">JUnit</a>, <a class="reference external" href="http://www.jmdoudoux.fr/java/dej/chap-junit.htm">tutoriel</a></li>
+<li>Python : <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a>, tutoriel sur la page du module</li>
+</ul>
+<p>A minima, les tests peuvent être réalisés par un ensemble d&#8217;exécutables ou de scripts isolés, même si les outils ci-dessus apportent une plus-value en terme de reproductibilité et de génération de rapport.</p>
 </div>
 </div>
 
