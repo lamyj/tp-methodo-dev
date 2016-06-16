@@ -6,12 +6,12 @@ Documentation du code
 
 Ajoutez deux nouvelles fonctionnalités : le cosinus et le sinus. Ces deux opérateurs (respectivement ``cos`` et ``sin``) prennent une seule opérande, l'angle, et renvoient le sinus ou le cosinus de cet angle. Comme pour les étapes précédentes, n'oubliez pas les tests et le commit.
 
-Avez-vous choisi d'exprimer l'angle en degré ou en radian ? Est-ce documenté (au moins au niveau des fonctions, la documentation utilisateur n'étant pas abordée ici) ?
+Avez-vous choisi d'exprimer l'angle en degrés ou en radians ? Est-ce documenté (au moins au niveau des fonctions, la documentation utilisateur n'étant pas abordée ici) ?
 
 Gestion de bug
 --------------
 
-La valeur de π n'est pas assez précise : sin(3.14 rad) vaut 0.0016 alors que la valeur attendue de sin(π rad) est 0. Ceci peut être considéré comme un bug. Revenez sur la version ``v1.0`` (`git checkout`_), créez une nouvelle branche nommée ``maintenance-1.0`` (`git branch`_) et corrigez le bug en remplaçant la valeur approchée de π par une plus précise (n'hésitez pas à vous servir d'une valeur présente dans le langage). Ajoutez une étiquette à ce nouveau commit (``v1.1``), repassez sur la branche principale et fusionnez la branche de maintenance à la branche principale (`git merge`_).
+La valeur de π n'est pas assez précise : sin(3.14 rad) vaut 0.0016 alors que la valeur attendue de sin(π rad) est 0 ; ceci peut être considéré comme un bug. Revenez sur la version ``v1.0`` (`git checkout`_), créez une nouvelle branche nommée ``maintenance-1.0`` (`git branch`_) et corrigez le bug en remplaçant la valeur approchée de π par une plus précise (n'hésitez pas à vous servir d'une constante présente dans le langage). Ajoutez une étiquette à ce nouveau commit (``v1.1``), repassez sur la branche principale et fusionnez la branche de maintenance à la branche principale (`git merge`_).
 
 Version 2.0
 -----------
